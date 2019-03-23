@@ -1,6 +1,5 @@
 package com.qa1.model;
 
-import java.util.Scanner;
 
 public class Books {
     private Book[] a;
@@ -9,10 +8,6 @@ public class Books {
     public Books( int b) {
         Book [] c = new Book[b];
         this.a = c;
-    }
-
-    public Books(Book[] a) {
-        this.a = a;
     }
 
     public boolean addBook(Book book){
