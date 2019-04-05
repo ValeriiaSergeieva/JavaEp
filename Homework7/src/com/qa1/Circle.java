@@ -3,18 +3,16 @@ package com.qa1;
 public class Circle extends Shape {
     private double radius;
 
-    public Circle(double radius) {
+    public Circle(String color, double radius) {
+        super(color);
         this.radius = radius;
-    }
-
-    public Circle() {
     }
 
     @Override
     public String toString() {
         return "Circle{" +
-                "radius=" + radius +
-                '}';
+                "radius=" + radius + super.toString()+
+                "} ";
     }
 
     @Override

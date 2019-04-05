@@ -1,23 +1,25 @@
 package com.qa1;
 
-public class Shape {
+public abstract class Shape implements Drawable {
     private String color;
 
     public Shape(String color) {
         this.color = color;
     }
 
-    public Shape() {
+    public String getColor() {
+        return color;
     }
 
     @Override
     public String toString() {
-        return "Shape{" +
-                "color='" + color + '\'' +
-                '}';
+        return "color= " + color;
     }
 
-    public double calcArea(){
-        return 0.0;
+    public abstract double calcArea();
+
+    @Override
+    public void draw() {
+        System.out.println(this + " -> area = " + this.calcArea());
     }
 }

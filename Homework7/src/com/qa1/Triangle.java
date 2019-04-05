@@ -5,13 +5,11 @@ public class Triangle extends Shape{
     private double b;
     private double c;
 
-    public Triangle(double a, double b, double c) {
+    public Triangle(String color, double a, double b, double c) {
+        super(color);
         this.a = a;
         this.b = b;
         this.c = c;
-    }
-
-    public Triangle() {
     }
 
     @Override
@@ -19,8 +17,8 @@ public class Triangle extends Shape{
         return "Triangle{" +
                 "a=" + a +
                 ", b=" + b +
-                ", c=" + c +
-                '}';
+                ", c=" + c + super.toString()+
+                "} ";
     }
 
     @Override

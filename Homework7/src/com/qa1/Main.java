@@ -1,19 +1,27 @@
 package com.qa1;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
 	Shape [] a = new Shape[9];
-    a[0] = new Rectangle(5,3);
-    a[1] = new Rectangle(2,2);
-    a[2] = new Rectangle(2,6);
-    a[3] = new Rectangle(1,2);
-    a[4] = new Circle(5);
-    a[5] = new Circle(2);
-    a[6] = new Circle(3);
-    a[7] = new Triangle(4,5,6);
-    a[8] = new Triangle(1,3,3);
+    a[0] = new Rectangle("Red",5,3);
+    a[1] = new Rectangle("Blue",2,2);
+    a[2] = new Rectangle("White",2,6);
+    a[3] = new Rectangle("Green",1,2);
+    a[4] = new Circle("Black",5);
+    a[5] = new Circle("Purple",2);
+    a[6] = new Circle("Orange",3);
+    a[7] = new Triangle("Pink", 4,5,6);
+    a[8] = new Triangle("Coral", 1,3,3);
 
+    printShapes(a);
+    System.out.println();
+    Arrays.sort(a,new CompareShapeByArea());
+    printShapes(a);
+    System.out.println();
+    Arrays.sort(a, new CompareByColor());
     printShapes(a);
 
     double totalArea = calculateTotalArea(a);
@@ -23,8 +31,7 @@ public class Main {
     }
     public static void printShapes(Shape[]a){
         for(Shape b:a){
-            double area = b.calcArea();
-            System.out.println(b + "Area = " + area);
+            b.draw();
         }
     }
     public static double calculateTotalArea(Shape[]a){
